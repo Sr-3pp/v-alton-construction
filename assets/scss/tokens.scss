@@ -1,0 +1,107 @@
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-text-light: #FFFFFF;
+$color-text-dark: #0e1111;
+$color-primary-red: #b51c1c;
+$color-primary-blue: #005299;
+$color-primary-yellow: #fac449;
+$color-red-100: #FFEBEE;
+$color-red-200: #FFCDD2;
+$color-red-300: #EF9A9A;
+$color-red-400: #E57373;
+$color-red-500: #EF5350;
+$color-red-600: #E53935;
+$color-red-700: #D32F2F;
+$color-red-800: #C62828;
+$color-red-900: #B71C1C;
+$color-gray-100: #F5F5F5;
+$color-gray-200: #EEEEEE;
+$color-gray-300: #E0E0E0;
+$color-gray-400: #BDBDBD;
+$color-gray-500: #9E9E9E;
+$color-gray-600: #757575;
+$color-gray-700: #616161;
+$color-gray-800: #424242;
+$color-gray-900: #212121;
+$color-blue-100: #E3F2FD;
+$color-blue-200: #BBDEFB;
+$color-blue-300: #90CAF9;
+$color-blue-400: #64B5F6;
+$color-blue-500: #42A5F5;
+$color-blue-600: #2196F3;
+$color-blue-700: #1E88E5;
+$color-blue-800: #1976D2;
+$color-blue-900: #1565C0;
+$font-family-primary: "Roboto";
+$font-family-secondary: "Arial";
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 20px;
+$breakpoint-xs: 0;
+$breakpoint-sm: 744;
+$breakpoint-md: 1024;
+$breakpoint-lg: 1366;
+$breakpoint-xl: 1920;
+$breakpoint-media-xs: '(min-width: 0px)';
+$breakpoint-media-sm: '(min-width: 744px)';
+$breakpoint-media-md: '(min-width: 1024px)';
+$breakpoint-media-lg: '(min-width: 1366px)';
+$breakpoint-media-xl: '(min-width: 1920px)';
+
+@mixin generate-css-variables() {
+  $variables: (
+    'color-black': $color-black,
+    'color-text-light': $color-text-light,
+    'color-text-dark': $color-text-dark,
+    'color-primary-red': $color-primary-red,
+    'color-primary-blue': $color-primary-blue,
+    'color-primary-yellow': $color-primary-yellow,
+    'color-red-100': $color-red-100,
+    'color-red-200': $color-red-200,
+    'color-red-300': $color-red-300,
+    'color-red-400': $color-red-400,
+    'color-red-500': $color-red-500,
+    'color-red-600': $color-red-600,
+    'color-red-700': $color-red-700,
+    'color-red-800': $color-red-800,
+    'color-red-900': $color-red-900,
+    'color-gray-100': $color-gray-100,
+    'color-gray-200': $color-gray-200,
+    'color-gray-300': $color-gray-300,
+    'color-gray-400': $color-gray-400,
+    'color-gray-500': $color-gray-500,
+    'color-gray-600': $color-gray-600,
+    'color-gray-700': $color-gray-700,
+    'color-gray-800': $color-gray-800,
+    'color-gray-900': $color-gray-900,
+    'color-blue-100': $color-blue-100,
+    'color-blue-200': $color-blue-200,
+    'color-blue-300': $color-blue-300,
+    'color-blue-400': $color-blue-400,
+    'color-blue-500': $color-blue-500,
+    'color-blue-600': $color-blue-600,
+    'color-blue-700': $color-blue-700,
+    'color-blue-800': $color-blue-800,
+    'color-blue-900': $color-blue-900,
+    'font-family-primary': $font-family-primary,
+    'font-family-secondary': $font-family-secondary,
+    'font-size-sm': $font-size-sm,
+    'font-size-md': $font-size-md,
+    'font-size-lg': $font-size-lg,
+    'font-size-xl': $font-size-xl,
+    'breakpoint-xs': $breakpoint-xs,
+    'breakpoint-sm': $breakpoint-sm,
+    'breakpoint-md': $breakpoint-md,
+    'breakpoint-lg': $breakpoint-lg,
+    'breakpoint-xl': $breakpoint-xl
+  );
+
+  :root {
+    @each $name, $value in $variables {
+      --#{$name}: #{$value};
+    }
+  }
+}
+
+

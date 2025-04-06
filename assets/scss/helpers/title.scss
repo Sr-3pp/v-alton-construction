@@ -1,0 +1,16 @@
+.al-title{
+  font-family: 'Calibri';
+  font-size: pxToRem(20);
+
+  @media #{$breakpoint-media-sm}{
+    font-size: pxToRem(24);
+  }
+  
+  @media #{$breakpoint-media-md}{
+    font-size: pxToRem(30);
+  }
+  
+  @media #{$breakpoint-media-xl}{
+    font-size: pxToRem(40);
+  }
+}

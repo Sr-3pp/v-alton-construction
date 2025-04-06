@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri Light Italic'), local('Calibri-LightItalic'),
+      url('~/assets/fonts/Calibri/Calibri-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri Italic'), local('Calibri-Italic'),
+      url('~/assets/fonts/Calibri/Calibri-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri Light'), local('Calibri-Light'),
+      url('~/assets/fonts/Calibri/Calibri-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri Bold'), local('Calibri-Bold'),
+      url('~/assets/fonts/Calibri/Calibri-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri'),
+      url('~/assets/fonts/Calibri/Calibri.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri Bold Italic'), local('Calibri-BoldItalic'),
+      url('~/assets/fonts/Calibri/Calibri-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: local('Centiry Gothic'),
+      url('~/assets/fonts/Century_gothic/centurygothic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: local('Centiry Gothic'),
+      url('~/assets/fonts/Century_gothic/centurygothic_bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: bold;
+}
