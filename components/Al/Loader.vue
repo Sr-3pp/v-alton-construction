@@ -8,7 +8,7 @@
 <style scoped lang="scss">
 .al-loader{
   --spinner-width: #{pxToRem(8)};
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
