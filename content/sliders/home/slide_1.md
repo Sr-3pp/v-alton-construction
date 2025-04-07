@@ -1,5 +1,5 @@
 ---
-title: "Our Services edited"
+title: "Our Services"
 description: "My slide description"
 cta: {
     label: 'Projects',
