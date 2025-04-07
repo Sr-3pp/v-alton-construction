@@ -1,6 +1,6 @@
 ---
-title: "Our Services"
-description: "My slide description"
+title: "Esto Our Services"
+description: "this is My slide description"
 cta: {
     label: 'Projects',
     href: '/projects'
