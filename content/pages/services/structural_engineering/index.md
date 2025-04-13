@@ -2,7 +2,7 @@
 title: "Structural Engineering"
 
 header: {
-  description: "lorem ipsum dolor sit ammet",
+  description: "At Alton Alvarez, we ensure structural integrity using the most durable and effective materials and engineering practices.",
   image: "https://picsum.photos/500/350"
 }
 
@@ -16,13 +16,13 @@ banner: "https://picsum.photos/1100/250"
 ---
 
 ::Paragraph
-## Quality
+## Our Focus on Quality:
 
-lorem ipsum dolor sit ammet
+We emphasize strength, durability, sustainability, and safety. Our engineering solutions account for load resistance, environmental resilience, and compliance.
 ::
 
 ::Paragraph
-## Whats next?
+## Next step:
 
-lorem ipsum dolor sit ammet
+Detailed design documentation is prepared. On-site quality checks are conducted throughout the construction process.
 ::

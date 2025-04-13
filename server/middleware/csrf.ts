@@ -1,4 +1,6 @@
 export default defineEventHandler(async (event) => {
+
+  return 
   if (event.node.req.method !== 'GET' && !event.node.req.url?.includes('/api/content')) {
     const csrfCookie = getCookie(event, 'csrf_token'); // Get the token from the cookie
     const body = await readBody(event); // Read request body

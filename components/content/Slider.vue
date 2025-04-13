@@ -25,6 +25,7 @@ const SlideKind = computed(() => {
   Carousel.al-slider__list(v-bind="config")
     Slide.al-slider__item(v-for="slide in slides" :key="slide.id")
       component(:is="SlideKind" v-bind="{...slide, ...slide.meta}")
+        ContentRenderer(:value="slide")
     template(#addons)
       Navigation
       Pagination

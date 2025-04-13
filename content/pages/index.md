@@ -9,31 +9,31 @@ seo:
 ::
 
 ::Band{alignment="center"}
- Creating Quality urban lifestyles
+ Creating Quality Urban Lifestyles
 ::
 
 ::IconGrid
 ---
 withPadding: true
 sizes: {
-  xs: "1/2",
+  xs: "1",
   sm: "1/3"
 }
 items: [
   {
-    icon: "burger-menu",
-    title: "value 1",
-    description: "my value 1 description"
+    icon: "shield",
+    title: "Integrity and Honesty",
+    description: "We believe in reflecting the values that define a reputable company—morality, strong character, and leadership."
   },
   {
-    icon: "burger-menu",
-    title: "value 2",
-    description: "my value 2 description"
+    icon: "quality",
+    title: "Quality work",
+    description: "Creating smart, functional solutions is our priority. We are committed to exceeding customer expectations through high-quality results."
   },
   {
-    icon: "burger-menu",
-    title: "value 3",
-    description: "my value 3 description"
+    icon: "team",
+    title: "Pofessional team",
+    description: "A skilled and collaborative team works together toward a shared vision—solving challenges efficiently and effectively."
   }
 ]
 ---

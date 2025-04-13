@@ -1,9 +1,14 @@
 ::Extra
 ---
-title: "Before Construction"
+title: "Services at a Glance"
 items: [
-  "Preparing design",
-  "Advising clients"
+  "Commercial Remodeling",
+  "Concrete Construction",
+  "Granite & Block Installation",
+  "Tile, Stone & Marble Design",
+  "Plumbing & Electrical",
+  "Custom Carpentry & Formwork",
+  "Prefabricated Concrete Solutions"
 ]
 image: "https://picsum.photos/500"
 ---

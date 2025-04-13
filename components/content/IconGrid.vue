@@ -30,12 +30,10 @@ Container(:with-padding="withPadding")
 
   &__item{
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: pxToRem(10);
+    gap: pxToRem(20);
 
     .al-icon{
-      background-color: $color-primary-red;
+      background-color: $color-primary-blue;
       border-radius: pxToRem(16);
       padding: pxToRem(4);
       color: $color-white;
@@ -44,6 +42,12 @@ Container(:with-padding="withPadding")
       flex-shrink: 0;
       margin-bottom: auto;
     }
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(10);
   }
 
   &.variant{
@@ -71,7 +75,7 @@ Container(:with-padding="withPadding")
 
       .icon-grid__title{
         font-size: pxToRem(24);
-        color: $color-primary-red;
+        color: $color-primary-blue;
       }
     }
   }

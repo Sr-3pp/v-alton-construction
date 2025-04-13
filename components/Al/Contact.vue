@@ -5,6 +5,8 @@ const formEl = ref<HTMLFormElement | null>(null)
 const sending = ref(false)
 const sent = ref(false)
 
+const mail = useMail()
+
 const contactForm = ref<{
   name: string,
   email: string,
@@ -15,25 +17,20 @@ const contactForm = ref<{
   message: ''
 })
 
+const { public: config } = useRuntimeConfig()
+
 const submitHandler = async () => {
   formEl.value?.reportValidity()
   
   sending.value = true
   
-  const formData = new FormData()
-  formData.append('name', contactForm.value.name)
-  formData.append('email', contactForm.value.email)
-  formData.append('message', contactForm.value.message)
-  formData.append('subject', 'Contact Form')
-  formData.append('csrfToken', $csrfToken as string)
-  
-  await $fetch('/api/send-mail', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'X-CSRF-Token': $csrfToken as string
-    }
+  const resp = await mail.send({
+    from: `"${contactForm.value.name}" <${config.mail.from}>`,
+    subject: 'Contact Form',
+    text: `Message from ${contactForm.value.name} (${contactForm.value.email}):\n\n ${contactForm.value.message}`,
   })
+  
+  console.log(resp)
 
   sending.value = false
   sent.value = true

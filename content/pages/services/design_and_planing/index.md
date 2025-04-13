@@ -2,7 +2,7 @@
 title: "Design and Planning"
 
 header: {
-  description: "lorem ipsum dolor sit ammet",
+  description: "We handle your project from planning to execution. Our team creates detailed plans, technical drawings, and design specifications that guide every phase of your construction or remodeling project.",
   image: "https://picsum.photos/500/350"
 }
 
@@ -16,13 +16,13 @@ banner: "https://picsum.photos/1100/250"
 ---
 
 ::Paragraph
-## Why dessign a Plane?
+## Why is planning essential?
 
-lorem ipsum dolor sit ammet
+Architectural design defines the project's layout, calculations, and timeline. It's the foundation for successful execution.
 ::
 
 ::Paragraph
-## Whats next?
+## Next step:
 
-lorem ipsum dolor sit ammet
+We develop a tailored design that reflects your needs and expectations. This includes dimensions, space distribution, materials, and construction features.
 ::

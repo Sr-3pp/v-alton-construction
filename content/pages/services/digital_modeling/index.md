@@ -2,7 +2,7 @@
 title: "Digital Modeling"
 
 header: {
-  description: "lorem ipsum dolor sit ammet",
+  description: "We fully harness 3D technologies to digitally render any surface, structure, or space. Specialized software allows us to create highly accurate three-dimensional models for precise planning and execution.",
   image: "https://picsum.photos/500/350"
 }
 
@@ -17,11 +17,11 @@ banner: "https://picsum.photos/1100/250"
 ::Paragraph
 ## Why we use digital modeling
 
-lorem ipsum dolor sit ammet
+3D modeling enhances efficiency and accuracy, reduces technical errors, and streamlines construction processes. Visualizing in 3D allows us to address potential spatial issues early, optimize layouts, and ensure project success.
 ::
 
 ::Paragraph
-## Whats next?
+## Next step:
 
-lorem ipsum dolor sit ammet
+Generate a 2D, isometric, or 3D model to visualize project dimensions and object placement for optimal space utilization.
 ::

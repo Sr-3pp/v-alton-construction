@@ -2,19 +2,31 @@
 
 const cachePolicy = "public,max-age=31536000,s-maxage=31536000";
 
+const mailConfig =
+  process.env.NODE_ENV != "production"
+    ? {
+        host: "smtp.mailtrap.io",
+        port: 587,
+        auth: {
+           user: process.env.TRAP_USER,
+           pass: process.env.TRAP_PASS,
+         },
+       }
+     : {
+         service: "gmail",
+         auth: {
+           user: process.env.SMTP_USER,
+           pass: process.env.SMTP_PASS,
+         },
+       };
+
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       mail: {
-        endpoint: process.env.NODE_ENV === 'production' ?  process.env.MAIL_ENDPOINT : process.env.MAIL_DEV_ENDPOINT,
         jwt_secret: process.env.MAIL_JWT_SECRET,
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
-        host: process.env.MAIL_HOST,
-        port: process.env.MAIL_PORT,
-        secure: process.env.MAIL_SECURE,
-        to: process.env.MAIL_TO,
         from: process.env.MAIL_FROM,
+        to: process.env.MAIL_TO,
       }
     }
   },
@@ -27,12 +39,13 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-04-06',
 
-  modules: [
-    "@nuxt/content",
-    "@nuxt/image",
-    "vue3-carousel-nuxt",
-    "@nuxtjs/leaflet",
-  ],
+  modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", [ "nuxt-mail", {
+    message: {
+      from: process.env.MAIL_FROM,
+      to: process.env.MAIL_TO,
+    },
+    smtp: mailConfig
+  } ]],
 
   css: ["~/assets/scss/main.scss", "~/assets/scss/fonts.scss"],
 

@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@dword-design/functions": "^6.0.1",
     "@nuxt/content": "3.3.0",
     "@nuxt/image": "1.9.0",
     "@nuxtjs/leaflet": "1.2.6",
@@ -23,6 +24,7 @@
     "@nuxt/devtools": "^1.0.3",
     "@types/jsonwebtoken": "^9.0.9",
     "nuxt": "^3.8.2",
+    "nuxt-mail": "5.1.1",
     "pug": "^3.0.3",
     "sass": "^1.85.1",
     "vue": "^3.3.8",
@@ -35,5 +37,6 @@
       "esbuild",
       "sharp"
     ]
-  }
+  },
+  "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
 }

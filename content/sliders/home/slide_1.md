@@ -1,14 +1,16 @@
 ---
-title: "Esto Our Services"
-description: "this is My slide description"
+title: "Our Projects in the Industry"
+description: ""
 cta: {
     label: 'Projects',
     href: '/projects'
 }
 sources: {
-  xs: "https://picsum.photos/1100/500"
+  xs: "/img/sliders/home/slide_1.jpg",
 }
 config: {
-  alignment: "left"
+  alignment: "right"
 }
 ---
+
+Transform your living or working space with **Alton Alvarez’s** complete remodeling and addition services

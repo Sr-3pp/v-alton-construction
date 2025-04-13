@@ -2,8 +2,13 @@
 ---
 title: "Before Construction"
 items: [
-  "Preparing design",
-  "Advising clients"
+  "Client Consultation",
+  "Plan Development",
+  "Technical Drawings",
+  "Product & Material Research",
+  "Layouts & Color Boards",
+  "Compliance Checks",
+  "Data Compilation"
 ]
 image: "https://picsum.photos/500"
 ---

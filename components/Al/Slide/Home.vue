@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   title: string,
   description: string,
+  theme?: string,
   cta?: {
     label: string,
     href: string
@@ -18,7 +19,7 @@ const props = defineProps<{
 </script>
 
 <template lang="pug">
-.al-slide__home(:class="`variant-${config.alignment}`")
+.al-slide__home(:class="`variant-${config.alignment} theme-${theme}`")
   picture.al-slide__home__picture
     source(v-if="sources.sm" media="(max-width: 767px)" :srcset="sources.sm")
     source(v-if="sources.md" media="(max-width: 1023px)" :srcset="sources.md")
@@ -26,7 +27,9 @@ const props = defineProps<{
   div.al-slide__home__content
     Container.al-slide__home__container
       h2.al-slide__home__title {{ title }}
-      p.al-slide__home__description {{ description }}
+      p.al-slide__home__description(v-if="description") {{ description }}
+      .al-slide__home__description(v-else)
+        slot
       AlButton(v-if="cta" :href="cta.href" :label="cta.label")
 </template>
 
@@ -57,6 +60,10 @@ const props = defineProps<{
         text-align: right;
         align-items: flex-end;
       }
+      .al-slide__home__description{
+        max-width: 50%;
+        margin-left: auto;
+      }
     }
     &-center{
       .al-slide__home__content{
@@ -76,12 +83,30 @@ const props = defineProps<{
         text-align: left;
         align-items: flex-start;
       }
+      .al-slide__home__description{
+        max-width: 50%;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &.theme{
+    &-big{
+      .al-slide__home__title{
+        font-family: "Century Gothic";
+        font-size: pxToRem(64);
+        line-height: pxToRem(72);
+        font-weight: 700;
+        max-width: 50%;
+      }
     }
   }
 
   &__title{
     font-family: "Calibri";
+    font-size: pxToRem(40);
     color: currentColor;
+    max-width: 50%;
   }
 
   &__title, &__description{
@@ -113,14 +138,10 @@ const props = defineProps<{
     border-radius: pxToRem(8);
     margin: auto;
     z-index: 1;
+  }
 
-    h2{
-      font-size: pxToRem(32);
-    }
-
-    p{
-      font-size: pxToRem(16);
-    }
+  &__description{
+    font-size: pxToRem(20);
   }
 }
 </style>
