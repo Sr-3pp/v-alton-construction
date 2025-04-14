@@ -8,6 +8,6 @@ items: [
   "Design Review (Autodesk)",
   "Latest AutoCAD"
 ]
-image: "https://picsum.photos/500"
+image: "/img/services/digital_modeling/computer.webp"
 ---
 ::

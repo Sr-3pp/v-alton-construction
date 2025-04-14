@@ -1,12 +1,12 @@
 ---
-image: "/img/projects/new_construction/columns.webp"
+image: "/img/projects/new_construction/ramp.webp"
 cilent: ""
 project: ""
 layout: row
 ---
 
 ::Paragraph
-## Columns
+## Ramp
 
 **Rod structure for column** Lorem ipsum dolor sit ammet
 ::

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   items: []
 }>()
+
+console.log('my items',props.items)
 </script>
 
 <template lang="pug">
@@ -22,6 +24,7 @@ defineProps<{
   gap: pxToRem(20);
 
   &__item{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: pxToRem(10);

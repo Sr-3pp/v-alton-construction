@@ -1,5 +1,5 @@
 ---
-image: "https://picsum.photos/900/600"
+image: "/img/projects/remodeling/gazebo.webp"
 cilent: ""
 project: ""
 layout: column

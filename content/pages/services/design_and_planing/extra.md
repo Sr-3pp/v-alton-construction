@@ -10,6 +10,6 @@ items: [
   "Compliance Checks",
   "Data Compilation"
 ]
-image: "https://picsum.photos/500"
+image: "/img/services/design_and_planing/plane.webp"
 ---
 ::

@@ -3,7 +3,7 @@ title: "New Construction"
 
 header: {
   description: "lorem ipsum dolor sit ammet",
-  image: "https://picsum.photos/500/350"
+  image: "/img/projects/new_construction/columns.webp"
 }
 
 seo: {

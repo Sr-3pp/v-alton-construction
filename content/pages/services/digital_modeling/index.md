@@ -3,7 +3,7 @@ title: "Digital Modeling"
 
 header: {
   description: "We fully harness 3D technologies to digitally render any surface, structure, or space. Specialized software allows us to create highly accurate three-dimensional models for precise planning and execution.",
-  image: "https://picsum.photos/500/350"
+  image: "/img/services/digital_modeling.webp"
 }
 
 seo: {
@@ -11,7 +11,7 @@ seo: {
   description: "Description Srevices Digital Modeling"
 }
 
-banner: "https://picsum.photos/1100/250"
+banner: "/img/sliders/home/slide_1.webp"
 
 ---
 ::Paragraph

@@ -18,10 +18,12 @@ article.al-service-card
   position: relative;
   display: flex;
   overflow: hidden;
+  aspect-ratio: 1;
 
   img{
     width: 100%;
     height: auto;
+    object-fit: cover;
     filter: grayscale(100%);
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
   }

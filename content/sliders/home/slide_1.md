@@ -6,7 +6,7 @@ cta: {
     href: '/projects'
 }
 sources: {
-  xs: "/img/sliders/home/slide_1.jpg",
+  xs: "/img/sliders/home/slide_1.webp",
 }
 config: {
   alignment: "right"

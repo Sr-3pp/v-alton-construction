@@ -2,8 +2,8 @@
 title: "Construction Management"
 
 header: {
-  description: "lorem ipsum dolor sit ammet",
-  image: "https://picsum.photos/500/350"
+  description: "We manage your project with precision, guiding every step from planning to final execution.",
+  image: "/img/services/construction_management.webp"
 }
 
 seo: {
@@ -11,16 +11,16 @@ seo: {
   description: "Description Srevices Construction Management"
 }
 
-banner: "https://picsum.photos/1100/250"
+banner: "/img/sliders/home/slide_1.webp"
 ---
 ::Paragraph
-## Management services
+## Our Management Approach
 
-lorem ipsum dolor sit ammet
+We tailor strategies to each project, combining practical resources and strategic insights. Our management team ensures a comprehensive project plan with clear milestones and accountability.
 ::
 
 ::Paragraph
-## Whats next?
+## Next step:
 
-lorem ipsum dolor sit ammet
+We develop a full-service roadmap that aligns with your objectives—ensuring timely, budget-conscious, and high-quality results.
 ::

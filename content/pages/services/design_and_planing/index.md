@@ -11,7 +11,7 @@ seo: {
   description: "Description Srevices Design and Planning"
 }
 
-banner: "https://picsum.photos/1100/250"
+banner: "/img/sliders/home/slide_1.webp"
 
 ---
 

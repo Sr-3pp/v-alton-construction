@@ -3,7 +3,7 @@ title: "Remodeling"
 
 header: {
   description: "lorem ipsum dolor sit ammet",
-  image: "https://picsum.photos/500/350"
+  image: "/img/services/remodeling.webp"
 }
 
 seo: {
@@ -11,7 +11,7 @@ seo: {
   description: "Description Srevices Remodeling"
 }
 
-banner: "https://picsum.photos/1100/250"
+banner: "/img/sliders/home/slide_1.webp"
 
 ---
 
@@ -23,6 +23,41 @@ items: [
   {
     icon: "burger-menu",
     title: "Concrete",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Tile",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Block",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Plumbing",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Electricity",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Carpentry",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Stone",
+    description: "Lorem ipsum dolor sit ammet"
+  },
+  {
+    icon: "burger-menu",
+    title: "Painting",
     description: "Lorem ipsum dolor sit ammet"
   }
 ]

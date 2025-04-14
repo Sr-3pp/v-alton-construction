@@ -3,7 +3,7 @@ title: "Structural Engineering"
 
 header: {
   description: "At Alton Alvarez, we ensure structural integrity using the most durable and effective materials and engineering practices.",
-  image: "https://picsum.photos/500/350"
+  image: "/img/services/digital_modeling.webp"
 }
 
 seo: {
@@ -11,7 +11,7 @@ seo: {
   description: "Description Srevices Structural Engineering"
 }
 
-banner: "https://picsum.photos/1100/250"
+banner: "/img/sliders/home/slide_1.webp"
 
 ---
 
