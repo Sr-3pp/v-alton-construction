@@ -44,7 +44,7 @@ lorem ipusm dolor sit ammet
 ---
 variant: c
 sizes: {
-  xs: "1/2",
+  xs: "1",
   sm: "1/3"
 }
 items: [

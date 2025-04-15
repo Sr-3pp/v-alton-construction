@@ -60,9 +60,11 @@ defineProps<{
         text-align: right;
         align-items: flex-end;
       }
-      .al-slide__home__description{
-        max-width: 50%;
-        margin-left: auto;
+      @media #{$breakpoint-media-sm}{
+        .al-slide__home__description{
+          max-width: 50%;
+          margin-left: auto;
+        }
       }
     }
     &-center{
@@ -83,9 +85,11 @@ defineProps<{
         text-align: left;
         align-items: flex-start;
       }
-      .al-slide__home__description{
-        max-width: 50%;
-        margin-right: auto;
+      @media #{$breakpoint-media-sm}{
+        .al-slide__home__description{
+          max-width: 50%;
+          margin-right: auto;
+        }
       }
     }
   }
@@ -94,10 +98,14 @@ defineProps<{
     &-big{
       .al-slide__home__title{
         font-family: "Century Gothic";
-        font-size: pxToRem(64);
-        line-height: pxToRem(72);
+        font-size: pxToRem(30);
         font-weight: 700;
-        max-width: 50%;
+        
+        @media #{$breakpoint-media-sm}{
+          line-height: pxToRem(72);
+          font-size: pxToRem(64);
+          max-width: 50%;
+        }
       }
     }
   }
@@ -106,7 +114,11 @@ defineProps<{
     font-family: "Calibri";
     font-size: pxToRem(40);
     color: currentColor;
-    max-width: 50%;
+
+    @media #{$breakpoint-media-sm}{
+      max-width: 50%;
+    }
+
   }
 
   &__title, &__description{

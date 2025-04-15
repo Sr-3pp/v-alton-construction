@@ -1,7 +1,31 @@
 <script setup lang="ts">
+import { breakpointMediaLg, breakpointMediaMd, breakpointMediaSm, breakpointMediaXs,  } from '~/assets/ts/tokens';
 const props = defineProps<{
   name: string
 }>()
+
+const breakpoints: any = {
+  xs: {
+    min: breakpointMediaXs,
+    max: 743
+  },
+  sm: {
+    min: breakpointMediaSm,
+    max: 1023
+  },
+  md: {
+    min: breakpointMediaMd,
+    max: 1365
+  },
+  lg: {
+    min: breakpointMediaLg,
+    max: 1535
+  },
+  xl: {
+    min: breakpointMediaLg,
+    max: Infinity
+  }
+}
 
 const { data } = await useAsyncData(async () => {
   const query = await queryCollection('sliders').where('path', 'LIKE', `%/sliders/${props.name}%`).all()
@@ -18,6 +42,24 @@ const { slides, config }: any = data.value
 const SlideKind = computed(() => {
   return defineAsyncComponent(() => import(`@/components/Al/Slide/${props.name[0].toUpperCase() + props.name.substring(1)}.vue`))
 })
+
+const withNavigation = computed(() => {
+  if('breakpoints' in config){
+    const sw = Object.keys(config.breakpoints).find((breakPoint: string) => window.matchMedia(breakpoints[breakPoint].min).matches && config.breakpoints[breakPoint].navigationEnabled)
+    return sw
+  }
+  return config.navigationEnabled
+})
+
+const withPagination = computed(() => {
+  if('breakpoints' in config){
+    const sw = Object.keys(config.breakpoints).find((breakPoint: string) => window.matchMedia(breakpoints[breakPoint].min).matches && config.breakpoints[breakPoint].pagination)
+    if(sw){
+      return sw
+    }
+  }
+  return config.pagination
+})
 </script>
 
 <template lang="pug">
@@ -27,8 +69,9 @@ const SlideKind = computed(() => {
       component(:is="SlideKind" v-bind="{...slide, ...slide.meta}")
         ContentRenderer(:value="slide")
     template(#addons)
-      Navigation
-      Pagination
+      ClientOnly
+        Navigation(v-if="withNavigation")
+        Pagination(v-if="withPagination")
 </template>
 
 <style lang="scss">

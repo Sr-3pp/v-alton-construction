@@ -31,6 +31,11 @@ Container(:with-padding="withPadding")
   &__item{
     flex-direction: row;
     gap: pxToRem(20);
+    justify-content: center;
+
+    @media #{$breakpoint-media-sm}{
+      justify-content: flex-start;
+    }
 
     .al-icon{
       background-color: $color-primary-blue;

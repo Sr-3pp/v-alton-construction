@@ -1,12 +1,12 @@
 <script setup lang="ts">
 defineProps<{
-  alignment: string,
+  alignment?: string,
   withPadding?: boolean
 }>();
 </script>
 
 <template lang="pug">
-section.band(:class="`alignment-${alignment}`")
+section.band(:class="alignment ? `alignment-${alignment}` : ''")
   Container(:with-padding="withPadding")
     slot
 </template>

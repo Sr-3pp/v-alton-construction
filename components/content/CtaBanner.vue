@@ -3,10 +3,6 @@ defineProps<{
   label: string,
   href: string
 }>();
-
-const contactHandler = () => {
-  console.log('Contact us');
-}
 </script>
 
 <template lang="pug">
@@ -14,7 +10,7 @@ section.cta-banner
   Container(:with-padding="true")
     h3.cta-banner__title
       slot
-    AlButton.cta-banner__button(@click="contactHandler" label="Contact us")
+    AlButton.cta-banner__button(href="/contact" label="Contact us")
 </template>
 
 <style scoped lang="scss">

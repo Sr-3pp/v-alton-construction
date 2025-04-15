@@ -118,18 +118,16 @@ section.map
     &__list{
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: auto;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: pxToRem(20);
-      
-      @media #{$breakpoint-media-sm}{
-        flex-direction: column;
-      }
     }
 
     &__item{
+      width: 100%;
       display: flex;
       gap: pxToRem(20);
       align-items: center;

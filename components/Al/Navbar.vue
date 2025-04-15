@@ -108,6 +108,7 @@ header.al-navbar
       right: -100%;
       background-color: $color-primary-blue;
       width: 50%;
+      min-width: pxToRem(400);
       height: 100dvh;
       padding: pxToRem(20);
       padding-top: pxToRem(80);

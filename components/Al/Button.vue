@@ -41,6 +41,10 @@ div.al-button
     }
   }
 
+  span{
+    white-space: nowrap;
+  }
+
   &__loader{
     --spinner-width: #{pxToRem(4)};
     opacity: 0.5;
