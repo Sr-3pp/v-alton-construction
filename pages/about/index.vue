@@ -19,7 +19,7 @@ definePageMeta({
       ContentRenderer.extra(v-if="extra" :value="extra")
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .content{
   display: flex;
   flex-direction: column;
@@ -27,6 +27,16 @@ definePageMeta({
 
   @media #{$breakpoint-media-sm}{
     gap: pxToRem(40);
+  }
+
+  ul{
+    padding-left: pxToRem(20);
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(10);
+    li{
+      list-style: disc;
+    }
   }
 }
 </style>
