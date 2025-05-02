@@ -2,39 +2,33 @@
 
 :::Paragraph
 ::Dropdown
-My question?
+When can we start?
 #content
-Lorem ipsum dolor sit
+Once we finalize the project scope and sign the contract, we can begin as early as the following week, depending on scheduling availability.
 ::
 
 ::Dropdown
-My question?
+How can I contact you?
 #content
-Lorem ipsum dolor sit
+You can reach us via phone, email, or through our website’s contact form. We respond promptly to all inquiries.
 ::
 
 ::Dropdown
-My question?
+What documents do I need?
 #content
-Lorem ipsum dolor sit
+Typically, you’ll need a property ownership document, any existing building plans (if available), and any permits required by local authorities. We’ll guide you through the exact list during your consultation.
 ::
 
 ::Dropdown
-My question?
+Are you insured?
 #content
-Lorem ipsum dolor sit
+Yes, we are fully licensed and insured to carry out construction and remodeling projects. Your safety and our compliance are a top priority.
 ::
 
 ::Dropdown
-My question?
+How long does it take to complete a project?
 #content
-Lorem ipsum dolor sit
-::
-
-::Dropdown
-My question?
-#content
-Lorem ipsum dolor sit
+Project timelines vary depending on scope and complexity. Small renovations may take a few weeks, while larger builds can take several months. We provide a detailed timeline before starting.
 ::
 :::
 
