@@ -3,7 +3,7 @@ title: "Digital Modeling"
 
 header: {
   description: "We fully harness 3D technologies to digitally render any surface, structure, or space. Specialized software allows us to create highly accurate three-dimensional models for precise planning and execution.",
-  image: "/img/services/digital_modeling.webp"
+  image: "/img/services/digital-modeling.webp"
 }
 
 seo: {

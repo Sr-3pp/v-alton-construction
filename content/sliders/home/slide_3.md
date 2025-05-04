@@ -7,7 +7,7 @@ cta: {
     href: '/services'
 }
 sources: {
-  xs: "/img/sliders/home/slide_3.webp",
+  xs: "/img/sliders/home/slide_1.webp",
 }
 config: {
   alignment: "left"
