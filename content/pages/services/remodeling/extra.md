@@ -19,7 +19,7 @@ items: [
   {
     title: "Landscapes & Hardscapes",
     description: "From patios to outdoor kitchens, retaining walls to walkways—Alton Alvarez builds beautiful outdoor spaces that match your vision.",
-    thumb: "https://picsum.photos/600"
+    thumb: "/img/services/remodeling/landscaping.webp"
   },
 ]
 ---

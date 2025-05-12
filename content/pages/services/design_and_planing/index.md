@@ -3,7 +3,7 @@ title: "Design and Planning"
 
 header: {
   description: "We handle your project from planning to execution. Our team creates detailed plans, technical drawings, and design specifications that guide every phase of your construction or remodeling project.",
-  image: "https://picsum.photos/500/350"
+  image: "/img/services/design_and_planning.webp"
 }
 
 seo: {

@@ -10,6 +10,6 @@ items: [
   "Predictive Maintenance",
   "Training & Modeling Simulations",
 ]
-image: "https://picsum.photos/500"
+image: "/img/services/construction_management/construction_management.webp"
 ---
 ::
