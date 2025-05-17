@@ -21,12 +21,12 @@ banner: "/img/sliders/home/slide_1.webp"
 ---
 items: [
   {
-    icon: "burger-menu",
+    icon: "worker",
     title: "Concrete",
     description: "Lorem ipsum dolor sit ammet"
   },
   {
-    icon: "burger-menu",
+    icon: "tile",
     title: "Tile",
     description: "Lorem ipsum dolor sit ammet"
   },
@@ -36,7 +36,7 @@ items: [
     description: "Lorem ipsum dolor sit ammet"
   },
   {
-    icon: "burger-menu",
+    icon: "plumbing",
     title: "Plumbing",
     description: "Lorem ipsum dolor sit ammet"
   },
@@ -51,12 +51,12 @@ items: [
     description: "Lorem ipsum dolor sit ammet"
   },
   {
-    icon: "burger-menu",
+    icon: "stone",
     title: "Stone",
     description: "Lorem ipsum dolor sit ammet"
   },
   {
-    icon: "burger-menu",
+    icon: "painting",
     title: "Painting",
     description: "Lorem ipsum dolor sit ammet"
   }

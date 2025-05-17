@@ -42,7 +42,7 @@ Container(:with-padding="true")
             ol
               li(v-for="email in contactData.emails") {{ email }}
         li.content__data__item
-          AlIcon(name="burger-menu")
+          AlIcon(name="phone")
           .content__data__item__info
             h3 Phone
             ol

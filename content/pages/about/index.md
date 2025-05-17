@@ -61,16 +61,16 @@ sizes: {
 }
 items: [
   {
-    icon: "burger-menu",
-    title: "Compute Remodeling"
+    icon: "complete-remodeling",
+    title: "Complete Remodeling"
+  },
+  {
+    icon: "helmet2",
+    title: "New Construction"
   },
   {
     icon: "burger-menu",
-    title: "Compute Remodeling"
-  },
-  {
-    icon: "burger-menu",
-    title: "Compute Remodeling"
+    title: "Efficent Building"
   }
 ]
 ---

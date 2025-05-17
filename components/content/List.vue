@@ -42,13 +42,14 @@ ul.list(:class="`variant-${variant} alignment-${alignment}`" :style="`--bg-color
     &__content{
       display: flex;
       width: 100%;
+      gap: pxToRem(20);
     }
 
     .al-icon{
       flex-shrink: 0;
       width: pxToRem(100);
       height: pxToRem(100);
-      padding: pxToRem(10);
+      padding: pxToRem(20);
       background: linear-gradient(135deg, $color-black 0%, $color-gray-700 100%);
       color: $color-white;
       border-radius: pxToRem(99);

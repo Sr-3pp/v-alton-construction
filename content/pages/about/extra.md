@@ -34,12 +34,12 @@ items: [
     description: "We aim to make your experience smooth, fast, and enjoyable. Our flexible approach is designed to adapt to your needs and deliver on time."
   },
   {
-    icon: "burger-menu",
+    icon: "innovation",
     title: "Innovative Solutions",
     description: "We constantly evolve to stay ahead of industry demands, using smart strategies for cost savings and efficient project management."
   },
   {
-    icon: "burger-menu",
+    icon: "tools",
     title: "Top Technology Tools",
     description: "We integrate advanced tools and modern methods to boost the quality, precision, and performance of our work."
   },

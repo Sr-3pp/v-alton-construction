@@ -10,7 +10,7 @@ const props = defineProps<{
   ul.al-licences__list
     li.al-licences__item(v-for="licence in licences" :key="licence.id") 
       a.al-licences__licence(:href="licence.url" target="_blank")
-        AlIcon(name="burger-menu")
+        NuxtImg.al-icon(src="/svg/PDF.svg" :alt="licence.name")
         p {{ licence.name }}
 </template>
 
