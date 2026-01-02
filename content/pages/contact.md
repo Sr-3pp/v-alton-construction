@@ -10,6 +10,4 @@ seo: {
 
 ::Paragraph
 # Send us a Message
-
-Lorem ipsum dolor sit ammet
 ::

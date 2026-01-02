@@ -20,6 +20,7 @@ const mailConfig =
          },
        };
 
+
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
@@ -30,6 +31,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   devtools: { enabled: true },
 
   routeRules: {
@@ -39,14 +41,16 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-04-06',
 
-  modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", [ "nuxt-mail", {
+  modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", "nuxt-mail"],
+
+  css: ["~/assets/scss/main.scss", "~/assets/scss/fonts.scss"],
+
+  mail: {
     message: {
       to: process.env.MAIL_TO || '',
     },
     smtp: mailConfig
-  } ]],
-
-  css: ["~/assets/scss/main.scss", "~/assets/scss/fonts.scss"],
+  },
 
   vite: {
     css: {
@@ -60,6 +64,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   nitro: {
     compressPublicAssets: true,
     routeRules: {

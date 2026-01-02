@@ -2,7 +2,7 @@
 title: "Remodeling"
 
 header: {
-  description: "lorem ipsum dolor sit ammet",
+  description: "",
   image: "/img/services/remodeling.webp"
 }
 
@@ -23,42 +23,42 @@ items: [
   {
     icon: "worker",
     title: "Concrete",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
     icon: "tile",
     title: "Tile",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
-    icon: "burger-menu",
+    icon: "helmet2",
     title: "Block",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
     icon: "plumbing",
     title: "Plumbing",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
-    icon: "burger-menu",
+    icon: "helmet2",
     title: "Electricity",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
-    icon: "burger-menu",
+    icon: "helmet2",
     title: "Carpentry",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
     icon: "stone",
     title: "Stone",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   },
   {
     icon: "painting",
     title: "Painting",
-    description: "Lorem ipsum dolor sit ammet"
+    description: ""
   }
 ]
 ---

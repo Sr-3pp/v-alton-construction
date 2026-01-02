@@ -11,7 +11,7 @@ const props = defineProps<{
 <template lang="pug">
 div.al-button
   AlLoader.al-button__loader(v-if="loading")
-  NuxtLink(v-if="href" :to="href" :disabled="disabled")
+  NuxtLink(v-if="href" :to="href")
     span {{ label }}
   button(v-else :disabled="disabled")
     span {{ label }}

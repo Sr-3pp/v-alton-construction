@@ -2,8 +2,6 @@
 const props = defineProps<{
   items: []
 }>()
-
-console.log('my items',props.items)
 </script>
 
 <template lang="pug">
@@ -63,6 +61,7 @@ console.log('my items',props.items)
     &__title{
         font-size: pxToRem(32);
         font-weight: bold;
+        color: $color-white;
       }
   }
 }

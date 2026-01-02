@@ -5,10 +5,14 @@ const { data: nav } = await navigation
 
 const project = route.params.project as string
 
-const { data: main } = await useAsyncData(route.path, () => queryCollection('content').path(`/pages${route.path}`).first())
-const { data: extra } = await useAsyncData(`${route.path}/extra`, () => queryCollection('content').path(`/pages${route.path}/extra`).first())
+const { data: main } = await useAsyncData(`project-main-${route.path}`, () => queryCollection('content').path(`/pages${route.path}`).first(), {
+  watch: [() => route.path]
+})
+const { data: extra } = await useAsyncData(`project-extra-${route.path}`, () => queryCollection('content').path(`/pages${route.path}/extra`).first(), {
+  watch: [() => route.path]
+})
 
-const gallery = getSubmenu(`${route.path.substring(1)}/items`, nav.value as [])
+const gallery = computed(() => getSubmenu(`${route.path.substring(1)}/items`, nav.value as []))
 
 useSeoMeta({
   title: main.value?.seo.title,

@@ -9,6 +9,4 @@ seo: {
 
 ::Paragraph
 # Projects Overview
-
-Lorem **ipsum** dolor sit ammet
 ::

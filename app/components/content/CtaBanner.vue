@@ -1,8 +1,11 @@
 <script setup lang="ts">
-defineProps<{
-  label: string,
-  href: string
-}>();
+withDefaults(defineProps<{
+  label?: string,
+  href?: string
+}>(), {
+  label: 'Contact us',
+  href: '/contact'
+})
 </script>
 
 <template lang="pug">
@@ -10,7 +13,7 @@ section.cta-banner
   Container(:with-padding="true")
     h3.cta-banner__title
       slot
-    AlButton.cta-banner__button(href="/contact" label="Contact us")
+    AlButton.cta-banner__button(:href="href" :label="label")
 </template>
 
 <style scoped lang="scss">

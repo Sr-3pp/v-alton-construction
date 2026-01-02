@@ -47,7 +47,7 @@ const resumeForm = ref<{
 
 <template lang="pug">
 .cv-wizzard
-  AlIcon(name="burger-menu")
+  AlIcon(name="experience")
   TransitionGroup(name="fade")
     template(v-if="!sent")
       .cv-wizzard__content

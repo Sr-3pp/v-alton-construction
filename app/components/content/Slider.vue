@@ -40,7 +40,7 @@ const { data } = await useAsyncData(async () => {
 const { slides, config }: any = data.value
 
 const SlideKind = computed(() => {
-  return defineAsyncComponent(() => import(`@/components/Al/Slide/${props.name[0].toUpperCase() + props.name.substring(1)}.vue`))
+  return defineAsyncComponent(() => import(`@/components/Al/Slide/${props.name[0]!.toUpperCase() + props.name.substring(1)}.vue`))
 })
 
 const withNavigation = computed(() => {

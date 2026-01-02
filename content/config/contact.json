@@ -1,24 +1,18 @@
 {
   "tels": [
-    "123-456-7890",
-    "098-765-4321"
+    "(702) 401-0941"
   ],
   "emails": [
-    "mail@mail.com",
-    "mail2@mail.com"
+    "lalo@altonalvarezcm.com",
+    "mike@altonalvarezcm.com"
   ],
-  "address": "1234 Main St, City, State, 12345",
+  "address": "141 Fremont St B, Pahrump, NV 89048",
   "map": {
-    "center": [12.345678, -11.345678],
-    "marker": [12.345678, -10.345678],
-    "zoom": 8
+    "center": [36.1282422, -115.9857894],
+    "marker": [36.1282422, -115.9857894],
+    "zoom": 10
   },
-  "social": [
-    { "name": "facebook", "url": "https://www.facebook.com" },
-    { "name": "twitter", "url": "https://www.twitter.com" },
-    { "name": "instagram", "url": "https://www.instagram.com" },
-    { "name": "linkedin", "url": "https://www.linkedin.com" }
-  ],
+  "social": [],
   "hours": [
     { "day": "Monday", "hours": "9am - 5pm" },
     { "day": "Tuesday", "hours": "9am - 5pm" },

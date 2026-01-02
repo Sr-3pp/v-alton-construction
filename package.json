@@ -10,25 +10,26 @@
   },
   "dependencies": {
     "@dword-design/functions": "^6.0.1",
-    "@nuxt/content": "3.3.0",
-    "@nuxt/image": "1.9.0",
-    "@nuxtjs/leaflet": "1.2.6",
+    "@nuxt/content": "^3.3.2",
+    "@nuxt/image": "^1.9.0",
+    "@nuxtjs/leaflet": "^1.2.6",
+    "better-sqlite3": "^12.5.0",
+    "h3": "*",
     "json-to-var": "^1.1.2",
     "jsonwebtoken": "^9.0.2",
-    "nuxt": "^3.16.0",
+    "nitropack": "*",
+    "nuxt": "^4.2.2",
+    "nuxt-mail": "8.0.2",
+    "ofetch": "*",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "vue3-carousel-nuxt": "1.1.5"
+    "vue3-carousel-nuxt": "^1.1.5"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.3",
     "@types/jsonwebtoken": "^9.0.9",
-    "nuxt": "^3.8.2",
-    "nuxt-mail": "5.1.1",
     "pug": "^3.0.3",
-    "sass": "^1.85.1",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "sass": "^1.85.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

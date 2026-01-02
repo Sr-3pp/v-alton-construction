@@ -14,22 +14,22 @@ sizes: {
 }
 items: [
   {
-    icon: "burger-menu",
+    icon: "experience",
     title: "Our experience",
     description: "With years of hands-on work, we’ve gained the knowledge and skills needed to tackle challenges efficiently. Our expertise allows us to deliver effective solutions for any type of project."
   },
   {
-    icon: "burger-menu",
+    icon: "availability",
     title: "Availability",
     description: "We value your time and priorities. That’s why we stay responsive and engaged throughout your project, ensuring your expectations are not only met but exceeded."
   },
   {
-    icon: "burger-menu",
+    icon: "expert-team",
     title: "Expert Team",
     description: "Our professionals are equipped to handle complex challenges and deliver results. No matter the obstacle, we’re ready to solve it."
   },
   {
-    icon: "burger-menu",
+    icon: "fast-service",
     title: "Fast Service",
     description: "We aim to make your experience smooth, fast, and enjoyable. Our flexible approach is designed to adapt to your needs and deliver on time."
   },
