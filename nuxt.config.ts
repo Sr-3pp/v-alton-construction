@@ -41,8 +41,7 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", [ "nuxt-mail", {
     message: {
-      from: process.env.MAIL_FROM,
-      to: process.env.MAIL_TO,
+      to: process.env.MAIL_TO || '',
     },
     smtp: mailConfig
   } ]],
