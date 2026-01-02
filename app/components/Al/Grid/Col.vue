@@ -38,24 +38,24 @@ const colSizes = computed(() => {
 .al-grid-col{
   display: flex;
   flex-direction: column;
-  flex-basis: calc(var(--col-width) - var(--gap));
+  flex-basis: #{"calc(var(--col-width) - var(--gap))"};
   flex-shrink: 1;
   flex-grow: 1;
 
   @media #{$breakpoint-media-sm}{
-    flex-basis: calc(var(--col-width-sm, var(--col-width)) - var(--gap));
+    flex-basis: #{"calc(var(--col-width-sm, var(--col-width)) - var(--gap))"};
   }
 
   @media #{$breakpoint-media-md}{
-    flex-basis: calc(var(--col-width-md, var(--col-width-sm, var(--col-width))) - var(--gap));
+    flex-basis: #{"calc(var(--col-width-md, var(--col-width-sm, var(--col-width))) - var(--gap))"};
   }
 
   @media #{$breakpoint-media-lg}{
-    flex-basis: calc(var(--col-width-lg, var(--col-width-md, var(--col-width-sm, var(--col-width)))) - var(--gap));
+    flex-basis: #{"calc(var(--col-width-lg, var(--col-width-md, var(--col-width-sm, var(--col-width)))) - var(--gap))"};
   }
 
   @media #{$breakpoint-media-xl}{
-    flex-basis: calc(var(--col-width-xl, var(--col-width-lg, var(--col-width-md, var(--col-width-sm, var(--col-width))))) - var(--gap));
+    flex-basis: #{"calc(var(--col-width-xl, var(--col-width-lg, var(--col-width-md, var(--col-width-sm, var(--col-width))))) - var(--gap))"};
   }
 }
 
