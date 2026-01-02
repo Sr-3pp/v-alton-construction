@@ -19,7 +19,7 @@ alignment: right
 background: var(--color-gray-300)
 items: [
   {
-    icon: "burger-menu",
+    icon: "helmet2",
     title: "Project Manager",
     description: "Responsible for the overall planning, coordination, and supervision of all assigned projects to ensure safe and successful completion on time and within budget."
   },

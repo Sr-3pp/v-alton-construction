@@ -66,7 +66,7 @@ header.al-navbar
 
 <style scoped lang="scss">
 .al-navbar{
-  background-color: $color-primary-red;
+  background-color: $color-primary-blue;
   color: $color-text-light;
   display: flex;
   justify-content: space-between;
@@ -76,7 +76,7 @@ header.al-navbar
 
   @media #{$breakpoint-media-sm}{
     background-color: transparent;
-    background: linear-gradient(90deg, $color-primary-red 50%, $color-primary-blue 50%);
+    background: linear-gradient(90deg, $color-primary-blue 50%, $color-primary-blue 50%);
   }
 
   &__nav{

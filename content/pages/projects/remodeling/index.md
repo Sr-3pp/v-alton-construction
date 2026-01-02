@@ -2,7 +2,7 @@
 title: "Remodeling"
 
 header: {
-  description: "lorem ipsum dolor sit ammet",
+  description: "",
   image: "/img/projects/remodeling/gazebo.webp"
 }
 

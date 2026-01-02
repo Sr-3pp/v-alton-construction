@@ -69,7 +69,7 @@ items: [
     title: "New Construction"
   },
   {
-    icon: "burger-menu",
+    icon: "helmet",
     title: "Efficent Building"
   }
 ]

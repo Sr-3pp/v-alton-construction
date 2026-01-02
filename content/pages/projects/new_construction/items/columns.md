@@ -8,5 +8,5 @@ layout: row
 ::Paragraph
 ## Columns
 
-**Rod structure for column** Lorem ipsum dolor sit ammet
+**Rod structure for column**
 ::

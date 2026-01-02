@@ -3,8 +3,12 @@ const route = useRoute()
 
 const service = route.params.service as string
 
-const { data: main } = await useAsyncData(() => queryCollection('content').path(`/pages${route.path}`).first())
-const { data: extra } = await useAsyncData(() => queryCollection('content').path(`/pages${route.path}/extra`).first())
+const { data: main } = await useAsyncData(`service-main-${route.path}`, () => queryCollection('content').path(`/pages${route.path}`).first(), {
+  watch: [() => route.path]
+})
+const { data: extra } = await useAsyncData(`service-extra-${route.path}`, () => queryCollection('content').path(`/pages${route.path}/extra`).first(), {
+  watch: [() => route.path]
+})
 
 const src = 'https://picsum.photos/600/400'
 

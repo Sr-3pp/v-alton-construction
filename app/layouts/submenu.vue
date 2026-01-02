@@ -5,7 +5,7 @@ const { navigation, getSubmenu } = useNavigation()
 const { data: nav } = await navigation
 
 provide('navigation', nav)
-const submenu = getSubmenu((route.name as string).split('-')[0], nav.value as [])
+const submenu = getSubmenu((route.name as string).split('-')[0] as string, nav.value as [])
 
 
 const { data: page } = await useAsyncData(route.path, () => {
@@ -42,9 +42,8 @@ hook("page:finish", () => {
 
 watch(route, async () => {
   banner.value = ''
-  const data = await queryCollection('content').path(route.path).first()
-
-  banner.value = data.meta.banner as string
+  const data = await queryCollection('content').path(`/pages${route.path}`).first()
+  banner.value = data!.meta.banner as string
 })
 </script>
 

@@ -8,16 +8,13 @@ useSeoMeta({
 
 const { data: contact } = await useAsyncData('contact', () => queryCollection('config').path('/config/contact').first())
 
-const contactData = contact.value?.body
+const contactData = contact.value?.meta
 
 const map = ref(null)
-
-const mapAttribution = '&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors'
-
 </script>
 
 <template lang="pug">
-Banner(banner="https://picsum.photos/1100/300")
+Banner(banner="/img/contact-banner.webp")
 
 Container(:with-padding="true")
   AlGrid
@@ -31,12 +28,12 @@ Container(:with-padding="true")
 
       ul.content__data__list
         li.content__data__item
-          AlIcon(name="burger-menu")
+          AlIcon(name="address")
           .content__data__item__info
             h3 Address
             p {{ contactData.address }}
         li.content__data__item
-          AlIcon(name="burger-menu")
+          AlIcon(name="email")
           .content__data__item__info
             h3 Email
             ol
@@ -47,7 +44,7 @@ Container(:with-padding="true")
             h3 Phone
             ol
               li(v-for="phone in contactData.tels") {{ phone }}
-        li.content__data__item
+        li.content__data__item(v-if="contactData.social.length > 0")
           AlIcon(name="burger-menu")
           .content__data__item__info
             h3 Social
@@ -57,13 +54,12 @@ Container(:with-padding="true")
 section.map
   LMap.map__element(
     ref="map"
-    :zoom="8"
+    :zoom="contactData.map.zoom"
     :center="contactData.map.center"
     :use-global-leaflet="false"
   )
     LTileLayer(
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      :attribution="mapAttribution"
       layer-type="base"
       name="OpenStreetMap"
     )
