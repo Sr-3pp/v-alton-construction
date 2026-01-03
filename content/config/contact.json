@@ -4,13 +4,13 @@
   ],
   "emails": [
     "lalo@altonalvarezcm.com",
-    "mike@altonalvarezcm.com"
+    "mikea@altonalvarezcm.com"
   ],
-  "address": "141 Fremont St B, Pahrump, NV 89048",
+  "address": "331 S Frontage Rd, Pahrump, NV 89048, EE. UU.",
   "map": {
-    "center": [36.1282422, -115.9857894],
-    "marker": [36.1282422, -115.9857894],
-    "zoom": 10
+    "center": [36.2148239,-115.9965155],
+    "marker": [36.2148239,-115.9965155],
+    "zoom": 14
   },
   "social": [],
   "hours": [
