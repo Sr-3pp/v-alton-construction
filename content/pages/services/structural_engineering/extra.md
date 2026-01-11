@@ -7,7 +7,7 @@ items: [
   "Granite & Block Installation",
   "Tile, Stone & Marble Design",
   "Plumbing & Electrical",
-  "Custom Carpentry & Formwork",
+  "Custom Carpentry & Framework",
   "Prefabricated Concrete Solutions"
 ]
 image: "/img/services/design_and_planing/plane.webp"
