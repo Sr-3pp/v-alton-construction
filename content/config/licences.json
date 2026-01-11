@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Licence 1",
+    "description": "Description of licence 1",
+    "url": "/licences/licence1.pdf"
+  },
+  {
+    "name": "Licence 2",
+    "description": "Description of licence 2",
+    "url": "/licences/licence2.pdf"
+  },
+  {
+    "name": "Licence 3",
+    "description": "Description of licence 3",
+    "url": "/licences/licence3.pdf"
+  }
+]

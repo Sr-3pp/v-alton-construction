@@ -1,0 +1,16 @@
+{
+  "breakpoint": {
+    "xs": 0,
+    "sm": 744,
+    "md": 1024,
+    "lg": 1366,
+    "xl": 1920,
+    "media": {
+      "xs": "'(min-width: 0px)'",
+      "sm": "'(min-width: 744px)'",
+      "md": "'(min-width: 1024px)'",
+      "lg": "'(min-width: 1366px)'",
+      "xl": "'(min-width: 1920px)'"
+    }
+  }
+}
