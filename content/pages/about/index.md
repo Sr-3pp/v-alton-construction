@@ -46,7 +46,7 @@ We are fully certified in a wide range of construction and remodeling services, 
 *	Granite, Block, Tile, Stone, and Marble Design & Installation
 *	Plumbing & Electrical Work
 *	Carpentry & Custom Fabrication
-*	Formwork Manufacturing for Structural Projects
+*	Framework Manufacturing for Structural Projects
 
 Our team ensures excellence and precision across every stage of construction, from concept to completion.
 ::

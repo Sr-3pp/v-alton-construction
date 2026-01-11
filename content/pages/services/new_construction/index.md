@@ -33,7 +33,7 @@ items: [
   },
   {
     icon: "helmet2",
-    title: "Block",
+    title: "Cider Block",
     description: ""
   },
   {
