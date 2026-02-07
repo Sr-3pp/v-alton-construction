@@ -41,7 +41,14 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-04-06',
 
-  modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", "nuxt-mail"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image",
+    "vue3-carousel-nuxt",
+    "@nuxtjs/leaflet",
+    "nuxt-mail",
+    "nuxt-studio"
+  ],
 
   css: ["~/assets/scss/main.scss", "~/assets/scss/fonts.scss"],
 
@@ -89,5 +96,16 @@ export default defineNuxtConfig({
         },
       }
     },
+  },
+
+  studio: {
+    route: '/admin',
+    
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'Sr-3pp', // your GitHub/GitLab username or organization
+      repo: 'v-alton-construction', // your repository name
+      branch: 'main', // the branch to commit to (default: main)
+    }
   }
 });

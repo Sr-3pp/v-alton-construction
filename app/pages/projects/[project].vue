@@ -14,6 +14,9 @@ const { data: extra } = await useAsyncData(`project-extra-${route.path}`, () => 
 
 const gallery = computed(() => getSubmenu(`${route.path.substring(1)}/items`, nav.value as []))
 
+
+console.log(gallery.value)
+
 useSeoMeta({
   title: main.value?.seo.title,
   description: main.value?.seo.description,
@@ -44,7 +47,7 @@ const projectDetail = async (path: string) => {
           :grow="false"
         )
           button(@click="projectDetail(item.path)")
-            NuxtImg(:src="`${item.meta.image}`" :alt="item.title")
+            NuxtImg(:src="item.image" :alt="item.title")
             div.gallery__item__overlay
               h3 {{ item.title }}
               small {{ main.title }}
@@ -54,12 +57,12 @@ const projectDetail = async (path: string) => {
         ContentRenderer(v-if="extra" :value="extra")
       Modal(ref="projectModal")
         template(#body v-if="currentProject")
-          .project-detail(:class="`layout-${currentProject.meta.layout}`")
-            NuxtImg(:src="`${currentProject.meta.image}`" :alt="project")
+          .project-detail(:class="`layout-${currentProject.layout}`")
+            NuxtImg(:src="currentProject.image" :alt="project")
             .project-detail__content
               ContentRenderer.renderer(:value="currentProject")
-              p Client: {{ currentProject.meta.client }}
-              p Project: {{ currentProject.meta.project }}
+              p Client: {{ currentProject.client }}
+              p Project: {{ currentProject.project }}
 </template>
 
 <style scoped lang="scss">

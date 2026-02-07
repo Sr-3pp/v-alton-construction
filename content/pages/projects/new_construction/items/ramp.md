@@ -1,6 +1,6 @@
 ---
 image: "/img/projects/new_construction/ramp.webp"
-cilent: ""
+client: ""
 project: ""
 layout: row
 ---
