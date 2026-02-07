@@ -1,6 +1,6 @@
 export const useNavigation = () => {  
   const navigation = useAsyncData('navigation', async() => {
-    const nav = await queryCollectionNavigation('content', ['meta']).where('path', 'NOT LIKE', '%extra%')
+    const nav = await queryCollectionNavigation('content', ['image', 'client', 'project', 'layout', 'gallery']).where('path', 'NOT LIKE', '%extra%')
     return nav[0].children
   })
 
