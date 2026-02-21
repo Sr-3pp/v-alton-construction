@@ -28,6 +28,37 @@ definePageMeta({
 
 const projectModal = ref()
 const currentProject = ref()
+const carouselKey = ref(0)
+const modalOpen = ref(false)
+let carouselRerenderTimer: ReturnType<typeof setTimeout> | null = null
+
+const galleryImages = computed(() => {
+  const images = currentProject.value?.gallery
+  return Array.isArray(images) ? images : []
+})
+
+const hasGalleryCarousel = computed(() => galleryImages.value.length > 1)
+
+const handleModalOpen = async () => {
+  modalOpen.value = true
+  await nextTick()
+  if (import.meta.client) {
+    if (carouselRerenderTimer) {
+      clearTimeout(carouselRerenderTimer)
+    }
+    carouselRerenderTimer = setTimeout(() => {
+      carouselKey.value += 1
+    }, 400)
+  }
+}
+
+const handleModalClose = () => {
+  modalOpen.value = false
+  if (carouselRerenderTimer) {
+    clearTimeout(carouselRerenderTimer)
+    carouselRerenderTimer = null
+  }
+}
 
 const projectDetail = async (path: string) => {
   currentProject.value = await queryCollection('content').path(path).first()
@@ -55,10 +86,16 @@ const projectDetail = async (path: string) => {
     template(#extra)
       Container.extra(:with-padding="true")
         ContentRenderer(v-if="extra" :value="extra")
-      Modal(ref="projectModal")
+      Modal(ref="projectModal" @open="handleModalOpen" @close="handleModalClose")
         template(#body v-if="currentProject")
           .project-detail(:class="`layout-${currentProject.layout}`")
-            NuxtImg(:src="currentProject.image" :alt="project")
+            Carousel(v-if="hasGalleryCarousel" :key="carouselKey" :items-to-show="1" :gap="0")
+              Slide(v-for="(image, index) in galleryImages" :key="`${currentProject.path}-gallery-${index}`")
+                NuxtImg(:src="`${image}`" :alt="project")
+              template(#addons)
+                Navigation
+                Pagination
+            NuxtImg(v-else :src="`${currentProject.image}`" :alt="project")
             .project-detail__content
               ContentRenderer.renderer(:value="currentProject")
               p Client: {{ currentProject.client }}
@@ -143,6 +180,33 @@ const projectDetail = async (path: string) => {
 .project-detail{
   display: flex;
   gap: pxToRem(20);
+
+  > *{
+    max-width: pxToRem(400);
+  }
+
+  .carousel{
+    width: 100%;
+
+    &__viewport{
+      overflow: hidden;
+    }
+
+    &__track{
+      align-items: stretch;
+    }
+
+    &__slide{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
 
   &.layout{
     &-row{

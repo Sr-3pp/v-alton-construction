@@ -5,11 +5,22 @@ const dialog = ref(null)
 
 const isOpen = ref(false)
 
+const emit = defineEmits(['open', 'close'])
+
 const { lockScroll } = useLockScroll()
 const toggle = () => {
-  isOpen.value ? dialog.value.close() : dialog.value.showModal()
-  isOpen.value = !isOpen.value
-  lockScroll(isOpen.value)
+  if (isOpen.value) {
+    dialog.value.close()
+    isOpen.value = false
+    lockScroll(false)
+    emit('close')
+    return
+  }
+
+  dialog.value.showModal()
+  isOpen.value = true
+  lockScroll(true)
+  emit('open')
 }
 
 const handleBackdrop = (e) => {

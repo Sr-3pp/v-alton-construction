@@ -13,6 +13,7 @@ export default defineContentConfig({
         client: z.string().optional(),
         project: z.string().optional(),
         layout: z.string().optional(),
+        gallery: z.array(z.string()).optional()
       })
     }),
     config: defineCollection({
