@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const navigation = inject('navigation') as Ref<any>
+const {data: navigation} = useNuxtData('navigation')
 
 const navOrder = ['home', 'services', 'projects', 'about', 'contact']
 

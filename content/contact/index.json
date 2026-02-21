@@ -1,0 +1,62 @@
+{
+  "contact": {
+    "hours": [],
+    "social": [],
+    "emails": [],
+    "tels": [],
+    "map": {
+      "marker": [],
+      "center": []
+    }
+  },
+  "tels": [
+    "(702) 401-0941"
+  ],
+  "emails": [
+    "lalo@altonalvarezcm.com",
+    "mikea@altonalvarezcm.com"
+  ],
+  "address": "331 S Frontage Rd, Pahrump, NV 89048, EE. UU.",
+  "map": {
+    "center": [
+      36.2148239,
+      -115.9965155
+    ],
+    "marker": [
+      36.2148239,
+      -115.9965155
+    ],
+    "zoom": 14
+  },
+  "social": [],
+  "hours": [
+    {
+      "day": "Monday",
+      "hours": "8am - 5pm"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "8am - 5pm"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "8am - 5pm"
+    },
+    {
+      "day": "Thursday",
+      "hours": "8am - 5pm"
+    },
+    {
+      "day": "Friday",
+      "hours": "8am - 5pm"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ]
+}

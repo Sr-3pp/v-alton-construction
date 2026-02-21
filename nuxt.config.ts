@@ -34,6 +34,15 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', href: '/favicon.ico' }
+      ]
+    }
+  },
+
   routeRules: {
     // prerender index route by default
     '/': { prerender: true },
@@ -103,9 +112,9 @@ export default defineNuxtConfig({
     
     repository: {
       provider: 'github', // 'github' or 'gitlab'
-      owner: 'Sr-3pp', // your GitHub/GitLab username or organization
-      repo: 'v-alton-construction', // your repository name
-      branch: 'main', // the branch to commit to (default: main)
+      owner: process.env.STUDIO_GITHUB_USER as string, // your GitHub/GitLab username or organization
+      repo: process.env.STUDIO_GITHUB_REPO as string, // your repository name
+      branch: process.env.STUDIO_GITHUB_BRANCH as string, // the branch to commit to (default: main)
     }
   }
 });

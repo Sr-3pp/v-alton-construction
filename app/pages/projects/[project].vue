@@ -15,8 +15,6 @@ const { data: extra } = await useAsyncData(`project-extra-${route.path}`, () => 
 const gallery = computed(() => getSubmenu(`${route.path.substring(1)}/items`, nav.value as []))
 
 
-console.log(gallery.value)
-
 useSeoMeta({
   title: main.value?.seo.title,
   description: main.value?.seo.description,
