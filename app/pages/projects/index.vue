@@ -1,12 +1,10 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData(() => queryCollection('content').path('/pages/projects').first())
-const { data: extra } = await useAsyncData(() => queryCollection('content').path('/pages/projects/extra').first())
-const { data: _projects } = await useAsyncData(async () => {
+const { data: page } = await useAsyncData(() => queryCollection('content').path('/projects').first())
+const { data: extra } = await useAsyncData(() => queryCollection('content').path('/projects/extra').first())
+const { data: projects } = await useAsyncData(async () => {
   const nav = await queryCollectionNavigation('content', ['meta']).where('stem', 'LIKE', '%projects/%')
-  return nav[0].children
+  return nav[0]!.children
 })
-
-const projects = _projects.value![0].children
 
 useSeoMeta({
   title: page.value?.seo.title,

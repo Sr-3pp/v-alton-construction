@@ -1,14 +1,22 @@
 <script setup lang="ts">
- defineProps<{
-  licences: []
-}>()
+type Licence = {
+  id?: string
+  name: string
+  url: string
+}
+
+withDefaults(defineProps<{
+  licences?: Licence[]
+}>(), {
+  licences: () => []
+})
 </script>
 
 <template lang="pug">
 .al-licences
   h4 Licences
   ul.al-licences__list
-    li.al-licences__item(v-for="licence in licences" :key="licence.id") 
+    li.al-licences__item(v-for="(licence, i) in licences" :key="licence.id || `${licence.name}-${i}`") 
       a.al-licences__licence(:href="licence.url" target="_blank")
         NuxtImg.al-icon(src="/svg/PDF.svg" :alt="licence.name")
         p {{ licence.name }}

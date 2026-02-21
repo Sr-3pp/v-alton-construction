@@ -12,7 +12,10 @@ export default defineContentConfig({
   collections: {
     content: defineCollection({
       type: 'page',
-      source: 'pages/**',
+      source: {
+        include: 'pages/**/*.md',
+        prefix: '/'
+      },
       schema: z.object({
         title: z.string().optional(),
         description: z.string().optional(),
@@ -22,7 +25,7 @@ export default defineContentConfig({
         project: z.string().optional(),
         layout: z.string().optional(),
         gallery: z.array(z.string()).optional()
-      })
+      }),
     }),
     contact: defineCollection({
       type: 'data',
@@ -84,6 +87,19 @@ export default defineContentConfig({
         config: z.object({
           alignment: z.enum(['left', 'center', 'right']).optional(),
         })
+      })
+    }),
+    projects: defineCollection({
+      type: 'data',
+      source: 'projects/**/*.json',
+      schema: z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+        image: z.string(),
+        layout: z.string().optional(),
+        client: z.string().optional(),
+        project: z.string().optional(),
+        gallery: z.array(z.string()).optional()
       })
     })
   }

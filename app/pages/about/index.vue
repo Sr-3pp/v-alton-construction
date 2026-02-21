@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData(() => queryCollection('content').path('/pages/about').first())
-const { data: extra } = await useAsyncData(() => queryCollection('content').path('/pages/about/extra').first())
+const { data: page } = await useAsyncData(() => queryCollection('content').path('/about').first())
+const { data: extra } = await useAsyncData(() => queryCollection('content').path('/about/extra').first())
 useSeoMeta({
   title: page.value?.seo.title,
   description: page.value?.seo.description

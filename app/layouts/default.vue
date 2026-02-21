@@ -34,9 +34,3 @@ AlNavbar(ref="Navbar")
   NuxtPage
 AlFooter
 </template>
-
-<style scoped lang="scss">
-  .main{
-
-  }
-</style>

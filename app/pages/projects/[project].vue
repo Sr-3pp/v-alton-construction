@@ -1,18 +1,20 @@
 <script setup lang="ts">
 const route = useRoute()
-const { navigation, getSubmenu } = useNavigation()
-const { data: nav } = await navigation
 
-const project = route.params.project as string
+const project = computed(() => route.params.project as string)
 
-const { data: main } = await useAsyncData(`project-main-${route.path}`, () => queryCollection('content').path(`/pages${route.path}`).first(), {
+const { data: main } = await useAsyncData(`project-main-${route.path}`, () => queryCollection('content').path(`${route.path}`).first(), {
   watch: [() => route.path]
 })
-const { data: extra } = await useAsyncData(`project-extra-${route.path}`, () => queryCollection('content').path(`/pages${route.path}/extra`).first(), {
+const { data: extra } = await useAsyncData(`project-extra-${route.path}`, () => queryCollection('content').path(`${route.path}/extra`).first(), {
   watch: [() => route.path]
 })
 
-const gallery = computed(() => getSubmenu(`${route.path.substring(1)}/items`, nav.value as []))
+const { data: gallery } = await useAsyncData(`project-gallery-${route.path}`, () => queryCollection('projects')
+  .where('stem', 'LIKE', `%projects/${project.value}%`)
+  .all(), {
+  watch: [() => route.path]
+})
 
 
 useSeoMeta({
@@ -25,7 +27,7 @@ definePageMeta({
 })
 
 const projectModal = ref()
-const currentProject = ref()
+const currentProject = ref<any>()
 const carouselKey = ref(0)
 const modalOpen = ref(false)
 let carouselRerenderTimer: ReturnType<typeof setTimeout> | null = null
@@ -58,8 +60,8 @@ const handleModalClose = () => {
   }
 }
 
-const projectDetail = async (path: string) => {
-  currentProject.value = await queryCollection('content').path(path).first()
+const projectDetail = (item: any) => {
+  currentProject.value = item
   projectModal.value!.toggle()
 }
 </script>
@@ -70,12 +72,12 @@ const projectDetail = async (path: string) => {
       ContentRenderer.content(v-if="main" :value="main")
       AlGrid.gallery
         AlGridCol.gallery__item(v-for="item in gallery"
-          :key="item.path"
+          :key="item.id"
           size="1"
           size-sm="1/3"
           :grow="false"
         )
-          button(@click="projectDetail(item.path)")
+          button(@click="projectDetail(item)")
             NuxtImg(:src="item.image" :alt="item.title")
             div.gallery__item__overlay
               h3 {{ item.title }}
@@ -88,16 +90,19 @@ const projectDetail = async (path: string) => {
         template(#body v-if="currentProject")
           .project-detail(:class="`layout-${currentProject.layout}`")
             Carousel(v-if="hasGalleryCarousel" :key="carouselKey" :items-to-show="1" :gap="0")
-              Slide(v-for="(image, index) in galleryImages" :key="`${currentProject.path}-gallery-${index}`")
+              Slide(v-for="(image, index) in galleryImages" :key="`${currentProject.id}-gallery-${index}`")
                 NuxtImg(:src="`${image}`" :alt="project")
               template(#addons)
                 Navigation
                 Pagination
             NuxtImg(v-else :src="`${currentProject.image}`" :alt="project")
             .project-detail__content
-              ContentRenderer.renderer(:value="currentProject")
-              p Client: {{ currentProject.client }}
-              p Project: {{ currentProject.project }}
+              h2 {{ currentProject.title }}
+              p(v-if="currentProject.description") {{ currentProject.description }}
+
+              .project-detail__owner
+                p Client: {{ currentProject.client }}
+                p Project: {{ currentProject.project }}
 </template>
 
 <style scoped lang="scss">
@@ -225,6 +230,10 @@ const projectDetail = async (path: string) => {
     .renderer{
       margin-bottom: auto;
     }
+  }
+
+  &__owner{
+    margin-top: auto
   }
 }
 </style>
