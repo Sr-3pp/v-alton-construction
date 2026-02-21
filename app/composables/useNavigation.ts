@@ -1,7 +1,7 @@
 export const useNavigation = () => {  
   const navigation = useAsyncData('navigation', async() => {
     const nav = await queryCollectionNavigation('content', ['image', 'client', 'project', 'layout', 'gallery']).where('path', 'NOT LIKE', '%extra%')
-    return nav[0].children
+    return nav[0]!.children
   })
 
   const getSubmenu = (path: string, nav: []) => {

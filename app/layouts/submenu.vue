@@ -13,7 +13,7 @@ const { data: page } = await useAsyncData(route.path, () => {
 })
 
 const { data: licences } = await useAsyncData('licences', () => {
-  return queryCollection('config').path('/config/licences').first()
+  return queryCollection('licences').all()
 })
 
 const banner = ref<string | null>(page.value!.meta.banner as string || '')
@@ -56,7 +56,7 @@ AlNavbar(ref="Navbar")
     AlGrid
       AlGridCol(size="1" size-sm="1/4")
         AlSubmenu(:submenu="submenu")
-        AlLicences(:licences="licences.body")
+        AlLicences(:licences="licences")
       AlGridCol(size="1" size-sm="3/4")
         slot(name="main")
   slot(name="extra")

@@ -1,11 +1,12 @@
 ---
-image: "/img/projects/new_construction/columns.webp"
+title: Columns
 client: ""
-project: ""
+image: /img/projects/new_construction/columns.webp
 layout: row
+project: ""
 ---
 
-::Paragraph
+::paragraph
 ## Columns
 
 **Rod structure for column**

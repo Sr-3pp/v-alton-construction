@@ -14,6 +14,7 @@ const { data: extra } = await useAsyncData(`project-extra-${route.path}`, () => 
 
 const gallery = computed(() => getSubmenu(`${route.path.substring(1)}/items`, nav.value as []))
 
+
 useSeoMeta({
   title: main.value?.seo.title,
   description: main.value?.seo.description,
@@ -75,7 +76,7 @@ const projectDetail = async (path: string) => {
           :grow="false"
         )
           button(@click="projectDetail(item.path)")
-            NuxtImg(:src="`${item.image}`" :alt="item.title")
+            NuxtImg(:src="item.image" :alt="item.title")
             div.gallery__item__overlay
               h3 {{ item.title }}
               small {{ main.title }}

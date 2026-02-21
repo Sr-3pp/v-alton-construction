@@ -34,6 +34,15 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', href: '/favicon.ico' }
+      ]
+    }
+  },
+
   routeRules: {
     // prerender index route by default
     '/': { prerender: true },
@@ -41,7 +50,14 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-04-06',
 
-  modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", "nuxt-mail"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image",
+    "vue3-carousel-nuxt",
+    "@nuxtjs/leaflet",
+    "nuxt-mail",
+    "nuxt-studio"
+  ],
 
   css: ["~/assets/scss/main.scss", "~/assets/scss/fonts.scss"],
 
@@ -89,5 +105,16 @@ export default defineNuxtConfig({
         },
       }
     },
+  },
+
+  studio: {
+    route: '/admin',
+    
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: process.env.STUDIO_GITHUB_USER as string, // your GitHub/GitLab username or organization
+      repo: process.env.STUDIO_GITHUB_REPO as string, // your repository name
+      branch: process.env.STUDIO_GITHUB_BRANCH as string, // the branch to commit to (default: main)
+    }
   }
 });

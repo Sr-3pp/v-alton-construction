@@ -6,9 +6,7 @@ useSeoMeta({
   description: page.value?.seo.description
 })
 
-const { data: contact } = await useAsyncData('contact', () => queryCollection('config').path('/config/contact').first())
-
-const contactData = contact.value?.meta
+const { data: contact } = await useAsyncData('contact', () => queryCollection('contact').first())
 
 const map = ref(null)
 </script>
@@ -31,31 +29,31 @@ Container(:with-padding="true")
           AlIcon(name="address")
           .content__data__item__info
             h3 Address
-            p {{ contactData.address }}
+            p {{ contact.address }}
         li.content__data__item
           AlIcon(name="email")
           .content__data__item__info
             h3 Email
             ol
-              li(v-for="email in contactData.emails") {{ email }}
+              li(v-for="email in contact.emails") {{ email }}
         li.content__data__item
           AlIcon(name="phone")
           .content__data__item__info
             h3 Phone
             ol
-              li(v-for="phone in contactData.tels") {{ phone }}
-        li.content__data__item(v-if="contactData.social.length > 0")
+              li(v-for="phone in contact.tels") {{ phone }}
+        li.content__data__item(v-if="contact.social.length > 0")
           AlIcon(name="burger-menu")
           .content__data__item__info
             h3 Social
             ol
-              li(v-for="social in contactData.social")
+              li(v-for="social in contact.social")
                 a(:href="social.url" target="_blank") {{ social.name }}
 section.map
   LMap.map__element(
     ref="map"
-    :zoom="contactData.map.zoom"
-    :center="contactData.map.center"
+    :zoom="contact.map.zoom"
+    :center="contact.map.center"
     :use-global-leaflet="false"
   )
     LTileLayer(
@@ -63,16 +61,16 @@ section.map
       layer-type="base"
       name="OpenStreetMap"
     )
-    LMarker(:lat-lng="contactData.map.marker")
+    LMarker(:lat-lng="contact.map.marker")
   Container.map__container
     .map__content
       div
         h4.map__content__title  Address
-        p.map__content__description {{ contactData.address }}
+        p.map__content__description {{ contact.address }}
       div
         h4.map__content__title Opening hours
         ul.map__content__hours
-          li.map__content__hour(v-for="hour in contactData.hours")
+          li.map__content__hour(v-for="hour in contact.hours")
             span {{ hour.day }}
             span {{ hour.hours }}
 

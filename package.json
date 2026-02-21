@@ -20,6 +20,7 @@
     "nitropack": "*",
     "nuxt": "^4.2.2",
     "nuxt-mail": "8.0.2",
+    "nuxt-studio": "1.2.0",
     "ofetch": "*",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
