@@ -5,20 +5,20 @@ const cachePolicy = "public,max-age=31536000,s-maxage=31536000";
 const mailConfig =
   process.env.NODE_ENV != "production"
     ? {
-        host: "smtp.mailtrap.io",
-        port: 587,
-        auth: {
-           user: process.env.TRAP_USER,
-           pass: process.env.TRAP_PASS,
-         },
-       }
-     : {
-         service: "gmail",
-         auth: {
-           user: process.env.SMTP_USER,
-           pass: process.env.SMTP_PASS,
-         },
-       };
+      host: "smtp.mailtrap.io",
+      port: 587,
+      auth: {
+        user: process.env.TRAP_USER,
+        pass: process.env.TRAP_PASS,
+      },
+    }
+    : {
+      service: "gmail",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    };
 
 
 export default defineNuxtConfig({
@@ -34,14 +34,39 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', href: '/favicon.ico' }
+      ]
+    }
+  },
+
   routeRules: {
-    // prerender index route by default
     '/': { prerender: true },
+    '/__nuxt_studio/**': {
+      headers: {
+        'cache-control': 'no-store, no-cache, must-revalidate'
+      }
+    },
+    '/__nuxt_content/**': {
+      headers: {
+        'cache-control': 'no-store, no-cache, must-revalidate'
+      }
+    }
   },
 
   compatibilityDate: '2025-04-06',
 
-  modules: ["@nuxt/content", "@nuxt/image", "vue3-carousel-nuxt", "@nuxtjs/leaflet", "nuxt-mail"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image",
+    "vue3-carousel-nuxt",
+    "@nuxtjs/leaflet",
+    "nuxt-mail",
+    "nuxt-studio"
+  ],
 
   css: ["~/assets/scss/main.scss", "~/assets/scss/fonts.scss"],
 
@@ -89,5 +114,17 @@ export default defineNuxtConfig({
         },
       }
     },
+  },
+
+  studio: {
+    route: '/admin',
+
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: process.env.STUDIO_GITHUB_USER as string, // your GitHub/GitLab username or organization
+      repo: process.env.STUDIO_GITHUB_REPO as string, // your repository name
+      branch: process.env.STUDIO_GITHUB_BRANCH as string, // the branch to commit to (default: main)
+      rootDir: process.env.STUDIO_GITHUB_ROOT_DIR || 'content'
+    }
   }
 });

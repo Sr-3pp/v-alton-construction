@@ -1,0 +1,12 @@
+{
+    "title": "Barn",
+    "description": "A barn built in 2023, showcasing our expertise in new construction",
+    "gallery": [
+        "/img/projects/new_construction/barn/barn_1.webp",
+        "/img/projects/new_construction/barn/barn_2.webp"
+    ],
+    "image": "/img/projects/new_construction/barn/barn_1.webp",
+    "layout": "row",
+    "client": "",
+    "project": ""
+}

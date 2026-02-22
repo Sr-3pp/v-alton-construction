@@ -28,12 +28,12 @@ const breakpoints: any = {
 }
 
 const { data } = await useAsyncData(async () => {
-  const query = await queryCollection('sliders').where('path', 'LIKE', `%/sliders/${props.name}%`).all()
-  const config = query.shift()
+  const slides = await queryCollection('slides').where('stem', 'LIKE', `%sliders/slides/${props.name}%`).all()
+  const config = await queryCollection('slider_config').where('stem', 'LIKE', `%sliders/config/${props.name}%`).first()
 
   return {
-    slides: query,
-    config: config!.meta
+    slides,
+    config
   }
 })
 

@@ -29,8 +29,6 @@ const submitHandler = async () => {
     subject: 'Contact Form',
     text: `Message from ${contactForm.value.name} (${contactForm.value.email}):\n\n ${contactForm.value.message}`,
   })
-  
-  console.log(resp)
 
   sending.value = false
   sent.value = true

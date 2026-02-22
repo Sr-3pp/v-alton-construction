@@ -6,8 +6,6 @@ const loading = ref(true);
 const { navigation, getSubmenu } = useNavigation()
 const { data: nav } = await navigation
 
-provide('navigation', nav)
-
 const Navbar = ref();
 
 hook("page:start", () => {
@@ -36,9 +34,3 @@ AlNavbar(ref="Navbar")
   NuxtPage
 AlFooter
 </template>
-
-<style scoped lang="scss">
-  .main{
-
-  }
-</style>

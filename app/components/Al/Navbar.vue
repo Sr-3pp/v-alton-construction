@@ -1,15 +1,23 @@
 <script setup lang="ts">
-const navigation = inject('navigation') as Ref<any>
+const {data: navigation} = useNuxtData('navigation')
 
 const navOrder = ['home', 'services', 'projects', 'about', 'contact']
 
 const isActive = ref(false)
 const subActive = ref(-1)
 
+type NavItem = {
+  id?: string
+  title?: string
+  path?: string
+  children?: NavItem[]
+}
+
 const nav = computed(() => {
-  return navOrder.map((key) => {
-    return navigation.value!.find((item: {title: string}) => item.title.toLowerCase().includes(key))
-  })
+  const navigationItems = (navigation.value ?? []) as NavItem[]
+  return navOrder
+    .map((key) => navigationItems.find((item) => item?.title?.toLowerCase().includes(key)))
+    .filter((item): item is NavItem => Boolean(item?.path))
 })
 
 const toggle = () => isActive.value = !isActive.value
@@ -17,7 +25,8 @@ const toggle = () => isActive.value = !isActive.value
 const navMenu = ref<HTMLElement | null>(null)
 
 onMounted(() => {
-  const elements = navMenu.value!.querySelectorAll('.al-navbar__nav__menu__item:not(.close)') as NodeListOf<HTMLElement>
+  if (!navMenu.value) return
+  const elements = navMenu.value.querySelectorAll('.al-navbar__nav__menu__item:not(.close)') as NodeListOf<HTMLElement>
   elements.forEach((el) => {
     if(el.children.length > 1){
       const rect = el.getBoundingClientRect()
@@ -50,7 +59,7 @@ header.al-navbar
           button(@click="toggle") ✕
         li.al-navbar__nav__menu__item(
             v-for="(item, i) in nav"
-            :key="item.id"
+            :key="item.id || item.path || i"
             :class="{active: subActive == i}"
         )
           span.al-navbar__nav__menu__item__label
@@ -59,7 +68,7 @@ header.al-navbar
               AlIcon(name="chevron-down")
           ol.al-navbar__nav__submenu(v-if="item.children")
             template(v-for="(subItem, j) in item.children")
-              li.al-navbar__nav__submenu__item(v-if="j != 0" :key="subItem.id")
+              li.al-navbar__nav__submenu__item(v-if="j != 0 && subItem?.path" :key="subItem.id || subItem.path || j")
                 NuxtLink.al-navbar__nav__submenu__link(:to="subItem.path.replace('/pages', '') || '/'") {{ subItem.title }}
   div.al-navbar__backdrop(:class="{active: isActive}" @click="toggle")
 </template>

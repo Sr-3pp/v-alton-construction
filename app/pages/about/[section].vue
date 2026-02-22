@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: page } = await useAsyncData(`page-${route.path}`, () => queryCollection('content').path(`/pages${route.path}`).first(), {
+const { data: page } = await useAsyncData(`page-${route.path}`, () => queryCollection('content').path(`${route.path}`).first(), {
   watch: [() => route.path]
 })
-const { data: extra } = await useAsyncData(`extra-${route.path}`, () => queryCollection('content').path(`/pages${route.path}/extra`).first(), {
+const { data: extra } = await useAsyncData(`extra-${route.path}`, () => queryCollection('content').path(`${route.path}/extra`).first(), {
   watch: [() => route.path]
 })
 useSeoMeta({

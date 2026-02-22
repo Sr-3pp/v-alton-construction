@@ -5,18 +5,23 @@ const { navigation, getSubmenu } = useNavigation()
 const { data: nav } = await navigation
 
 provide('navigation', nav)
-const submenu = getSubmenu((route.name as string).split('-')[0] as string, nav.value as [])
+const submenu = computed(() => getSubmenu((route.name as string).split('-')[0] as string, (nav.value ?? []) as []) ?? [])
 
 
-const { data: page } = await useAsyncData(route.path, () => {
+const { data: page } = await useAsyncData(() => `submenu-page-${route.path}`, () => {
   return queryCollection('content').path(`/pages${route.path}`).first()
+}, {
+  watch: [() => route.path]
 })
 
 const { data: licences } = await useAsyncData('licences', () => {
-  return queryCollection('config').path('/config/licences').first()
+  return queryCollection('licences').all()
 })
 
-const banner = ref<string | null>(page.value!.meta.banner as string || '')
+const banner = computed<string | null>(() => {
+  const data = page.value as any
+  return data?.meta?.banner ?? data?.meta?.header?.image ?? data?.header?.image ?? null
+})
 
 const { hook } = useNuxtApp();
 const loading = ref(true);
@@ -39,12 +44,6 @@ hook("page:finish", () => {
     loading.value = false
   }, 500)
 })
-
-watch(route, async () => {
-  banner.value = ''
-  const data = await queryCollection('content').path(`/pages${route.path}`).first()
-  banner.value = data!.meta.banner as string
-})
 </script>
 
 <template lang="pug">
@@ -55,8 +54,8 @@ AlNavbar(ref="Navbar")
   Container.content(:with-padding="true")
     AlGrid
       AlGridCol(size="1" size-sm="1/4")
-        AlSubmenu(:submenu="submenu")
-        AlLicences(:licences="licences.body")
+        AlSubmenu(:submenu="submenu || []")
+        AlLicences(:licences="licences || []")
       AlGridCol(size="1" size-sm="3/4")
         slot(name="main")
   slot(name="extra")
