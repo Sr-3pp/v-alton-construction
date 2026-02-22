@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
+const serviceSlug = computed(() => route.params.service as string)
 
 const getPageByRoute = async (path: string) => {
   const byPrefixedPath = await queryCollection('content').path(path).first()
@@ -7,12 +8,28 @@ const getPageByRoute = async (path: string) => {
   return queryCollection('content').path(`/pages${path}`).first()
 }
 
+const isServiceMatch = (item: any, slug: string) => {
+  const candidates = [item?.stem, item?.id, item?.path]
+    .filter((value): value is string => typeof value === 'string')
+
+  return candidates.some((value) =>
+    value === slug ||
+    value.endsWith(`/${slug}`) ||
+    value.includes(`services/${slug}`)
+  )
+}
+
 const { data: main } = await useAsyncData(`service-main-${route.path}`, () => getPageByRoute(route.path), {
   watch: [() => route.path]
 })
-const { data: extra } = await useAsyncData(`service-extra-${route.path}`, () => getPageByRoute(`${route.path}/extra`), {
+const { data: serviceExtra } = await useAsyncData(`service-extra-json-${route.path}`, async () => {
+  const items = await queryCollection('services').all()
+  return items.find((item: any) => isServiceMatch(item, serviceSlug.value)) ?? null
+}, {
   watch: [() => route.path]
 })
+
+console.log('Service Extra:', serviceExtra.value)
 
 const serviceHeader = computed(() => {
   const data = main.value as any
@@ -38,7 +55,16 @@ definePageMeta({
       ContentRenderer.content(v-if="main" :value="main")
     template(#extra)
       Container.extra(:with-padding="true")
-        ContentRenderer.extra(v-if="extra" :value="extra")
+        AlServiceExtra(
+          v-if="serviceExtra?.type === 'extra'"
+          :title="serviceExtra.title"
+          :items="serviceExtra.items"
+          :image="serviceExtra.image"
+        )
+        AlServiceShowcase(
+          v-else-if="serviceExtra?.type === 'showcase'"
+          :items="serviceExtra.items"
+        )
 </template>
 
 <style scoped lang="scss">

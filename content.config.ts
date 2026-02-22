@@ -101,6 +101,16 @@ export default defineContentConfig({
         project: z.string().optional(),
         gallery: z.array(z.string()).optional()
       })
+    }),
+    services: defineCollection({
+      type: 'data',
+      source: 'services/**/*.json',
+      schema: z.object({
+        image: z.string().optional(),
+        title: z.string().optional(),
+        type: z.enum(['extra', 'showcase']).optional(),
+        items: z.array(z.string()).optional()
+      })
     })
   }
 })
