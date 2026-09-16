@@ -1,8 +1,13 @@
 {
   "title": "Comercial",
+  "client": "",
   "description": "Commercial new construction project",
   "image": "/img/projects/new_construction/comercial.webp",
   "layout": "row",
-  "client": "",
-  "project": ""
+  "project": "",
+  "gallery": [
+    "/img/projects/new_construction/comercial/att.NaqZ43SZzDn18m32RAJjmGSZYGOGPJAx3KpQLChjnT0.webp",
+    "/img/projects/new_construction/comercial/02CEC684-D410-41A8-9EA6-D175EE849E36.webp",
+    "/img/projects/new_construction/comercial/DDCF6D98-7954-4F43-A901-B177DD6FEE25.webp"
+  ]
 }
