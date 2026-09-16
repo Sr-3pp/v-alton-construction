@@ -123,8 +123,10 @@ export default defineNuxtConfig({
       provider: 'github', // 'github' or 'gitlab'
       owner: process.env.STUDIO_GITHUB_USER as string, // your GitHub/GitLab username or organization
       repo: process.env.STUDIO_GITHUB_REPO as string, // your repository name
-      branch: process.env.STUDIO_GITHUB_BRANCH as string, // the branch to commit to (default: main)
-      rootDir: process.env.STUDIO_GITHUB_ROOT_DIR || 'content'
+      branch: process.env.STUDIO_GITHUB_BRANCH || 'main', // the branch to commit to (default: main)
+      // Subdirectory of the Nuxt app inside the repo (monorepos only). Studio already
+      // prefixes paths with 'content/' and 'public/', so this must stay empty here.
+      rootDir: process.env.STUDIO_GITHUB_ROOT_DIR || ''
     }
   }
 });
